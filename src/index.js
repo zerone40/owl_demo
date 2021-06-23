@@ -15,12 +15,10 @@ function makeStore() {
     return store;
 }
 
-
 function setup() {
     owl.config.mode = "dev";
     App.env.store = makeStore();
-    const app = new App();
-    app.mount(document.body);
+    owl.mount(App, { target: document.body });
 }
 
 utils.whenReady(setup);
